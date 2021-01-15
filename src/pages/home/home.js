@@ -1,13 +1,13 @@
 import React, {Component} from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Image, ViewPropTypes } from 'react-native';
+import { StyleSheet, Text, View, Image } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 
 export default class Home extends Component{
   
   static navigationOptions = {
     tabBarIcon: ({ tintColor }) => (
-        <Image source={require('../../assets/icons/home2.png')} style={styles.icon} tintColor={tintColor} />
+        <Image source={require('../../assets/icons/home.svg')} style={styles.icon} tintColor={tintColor} />
     )
   }
   

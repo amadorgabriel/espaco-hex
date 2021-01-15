@@ -5,8 +5,13 @@ import { StyleSheet, Text, View } from 'react-native';
 export default function Login() {
   return (
     <View style={styles.container}>
+
+      <TextInput style={style.input}/>
+      <TextInput style={style.input}/>
+
       <Text>Este é o Login</Text>
-      <StatusBar style="auto" />
+      <StatusBar style="auto"/>
+
     </View>
   );
 }

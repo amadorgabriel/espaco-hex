@@ -1,21 +1,28 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StatusBar } from 'expo-status-bar';
+import { View } from 'react-native';
+import { Text } from 'react-native-elements';
+
+import styles from './styles';
+import { ScrollView } from 'react-native-gesture-handler';
 
 export default function Explorar() {
-  return (
-    <View style={styles.container}>
-      <Text> Esta é a pagina EXPLORAR</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+  return (
+    <ScrollView style={styles.container}>
+
+        <Text h1 >Estes são os gupos disponíveis</Text>
+
+
+      <View style={styles.card}>
+        <Text> Teste </Text>
+      </View>
+      <View style={styles.card}>
+        <Text> Teste </Text>
+      </View>
+      
+      <StatusBar style="auto" />
+    </ScrollView>
+  );
+
+}

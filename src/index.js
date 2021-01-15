@@ -39,7 +39,6 @@ const LoginStack = createStackNavigator({
 
 
 
-
 const NavegadorPadrao = createBottomTabNavigator({
     Home: { screen: HomeScreen },
     Explorar: { screen: ExploreScreen },
@@ -51,50 +50,23 @@ const NavegadorPadrao = createBottomTabNavigator({
         initialRouteName: 'Home',
         tabBarOptions: {
             showLabel: true,
-            showIcon: false,
-            // activeTintColor:'#fff',
-            // inactiveTintColor:'#000',
-            // style: {
-            //     width: '100%',
-            //     height: 50
-            // },
-            // labelStyle: {
-            //     paddingBottom: 6,
-            //     // fontWeigth: "bold",
-            //     fontSize: 25,
-            // },
-            // tabStyle: {
-            //     width: 100,
-            // }
+            showIcon: true,
 
-            style:{
-                elevation: 0, //boxShadow no Android
-                showOpacity: 0, //boxShadow no IOS
-                heigth: 64,
-            },
-            tabStyle:{
-                flexDirection: 'row',
-                alignItems: 'center',
-                justifyContent: 'center',
-            },
-            
-            iconStyle:{
-                flex: 0,
-                width: 20,
-                height: 20
-            },
-            labelStyle:{
-                fontSize: 13,
-                width: '100%',
-                textAlign: 'center',
-                justifyContent: 'center',
-                display: 'flex',
-                flexDirection: 'column'
-            },
             inactiveBackgroundColor: '#fafafc',
             activeBackgroundColor: '#ebebf5',
             inactiveTintColor: '#c1bccc',
-            activeTintColor: '#32264d'
+            activeTintColor: '#32264d',
+            style: {
+                width: '100%',
+            },
+            labelStyle: {
+                paddingBottom: 6,
+                fontWeigth: "bold",
+                fontSize: 12,
+            },
+            tabStyle: {
+                width: '100%',
+            }
         },
     },
 
@@ -104,7 +76,7 @@ const NavegadorPadrao = createBottomTabNavigator({
 // container
 export default createAppContainer(
     createSwitchNavigator({
-        MyTabs,
+        NavegadorPadrao,
         CadastroStack,
         FormularioStack,
         GrupoEscolhidoStack,
