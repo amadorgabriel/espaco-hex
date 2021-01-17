@@ -1,0 +1,12 @@
+{
+  "name": "espaco-hex-app",
+  "displayName": "espaco-hex-app",
+  "expo": {
+    "name": "espaco-hex-app",
+    "slug": "espaco-hex-app",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
