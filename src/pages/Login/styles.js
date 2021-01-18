@@ -19,7 +19,6 @@ export const styles = StyleSheet.create({
         alignItems: 'center',
         alignSelf: 'center',
         justifyContent: 'space-around',
-        paddingTop: 30,
         marginLeft: 50,
         marginRight: 50,
         position: 'absolute',

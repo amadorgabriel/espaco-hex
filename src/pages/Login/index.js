@@ -15,7 +15,6 @@ import {
   Text,
   View,
   Picker,
-  Button,
   TouchableOpacity,
 } from "react-native";
 

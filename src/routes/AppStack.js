@@ -7,14 +7,14 @@ import LoginScreen from "../pages/Login/index";
 import SplashScreen from "../pages/Splash/index";
 import InterestScreen from "../pages/Interests/index";
 import ExploreScreen from "../pages/Explore/index";
-// import GroupViewScreen from "../pages/GroupView";
+import GroupViewScreen from "../pages/GroupPage/index";
 // import FormScreen from "../pages/Form";
 
 const Stack = createStackNavigator();
 
 export default () => (
   <Stack.Navigator
-    initialRouteName="Splash"
+    initialRouteName="Login"
     screenOptions={{ headerShown: true, headerTitleAlign: "right" }}
   >
     <Stack.Screen
@@ -88,6 +88,21 @@ export default () => (
           backgroundColor: "#fff",
         },
         headerTitle: "Explorar",
+      }}
+    />
+    <Stack.Screen
+      name="GroupPage"
+      component={GroupViewScreen}
+      options={{
+        headerTitleStyle: {
+          fontFamily: "Inter_600SemiBold",
+        },
+        headerTintColor: "black",
+        headerTransparent: true,
+        headerStyle: {
+          backgroundColor: "transparent",
+        },
+        headerTitle: "POHAs",
       }}
     />
   </Stack.Navigator>

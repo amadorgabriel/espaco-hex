@@ -12,7 +12,7 @@ export default () => {
     const navigation = useNavigation();
 
     useEffect(() => {
-        setTimeout(function() {navigation.navigate('Login')}, 5000);
+        setTimeout(function() {navigation.navigate('Login')}, 3000);
     }, []);
 
     return (

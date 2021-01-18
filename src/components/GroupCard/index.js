@@ -1,41 +1,52 @@
-import React, { useState } from "react";
-import { CardItem } from "./style";
-import { Image, Text, View } from "react-native";
+import React from "react";
+import { useNavigation } from "@react-navigation/native";
 
-import ImagemGroup from '../../assets/images/group-image.png';
-import ImagemTeam1 from '../../assets/images/team5.png';
-import ImagemTeam2 from '../../assets/images/team4.png';
-import ImagemTeam3 from '../../assets/images/team3.png';
-import ImagemTeam4 from '../../assets/images/team2.png';
-import ImagemTeam5 from '../../assets/images/team1.png';
-import ImagemProgressBar from '../../assets/images/progress-bar.png';
+import {
+  CardItem,
+  ProfileImage,
+  ContentView,
+  GroupImage,
+  ProfilesContainer,
+  Description,
+  Title,
+  ProgressBar,
+} from "./style";
+import { Text, View } from "react-native";
 
+import ProfileImg from "../../assets/images/profile.png";
+import ImagemProgressBar from "../../assets/images/progress-bar.png";
 
-export default () => {
+export default ({ srcGroupImageBg, groupName, textContent, ...rest }) => {
+
+  const navigation = useNavigation();
+
   return (
-    <CardItem>
-      <Image
-        
-        source={ImagemGroup}
-      />
+    <CardItem onPress={() => navigation.navigate("GroupPage")}>
+      <GroupImage source={srcGroupImageBg} />
 
-      <View>
-        <Text> Espaçonautas </Text>
-        <Text>
-          Idealizadores da plataforma HEX, um espaço de criação para os alunos
-          do SENAI informática.
-        </Text>
+      <ContentView>
+        <Title> {groupName} </Title>
+        <Description>{textContent}</Description>
 
-        <Image source={ImagemProgressBar} />
-
-        <View>
-          <Image source={ImagemTeam1} />
-          <Image source={ImagemTeam2} />
-          <Image source={ImagemTeam3} />
-          <Image source={ImagemTeam4} />
-          <Image source={ImagemTeam5} />
+        <View
+          style={{
+            flexDirection: "row",
+            alignItems: "center",
+            justifyContent: "space-between",
+          }}
+        >
+          <ProgressBar source={ImagemProgressBar} />
+          <Text style={{fontWeight: "bold", marginRight: 20, color: "#464646"}}>35%</Text>
         </View>
-      </View>
+
+        <ProfilesContainer>
+          <ProfileImage source={ProfileImg} />
+          <ProfileImage source={ProfileImg} />
+          <ProfileImage source={ProfileImg} />
+          <ProfileImage source={ProfileImg} />
+          <ProfileImage source={ProfileImg} />
+        </ProfilesContainer>
+      </ContentView>
     </CardItem>
   );
 };
