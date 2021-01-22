@@ -3,10 +3,10 @@ import styled from 'styled-components/native';
 
 export const CardItem = styled.TouchableOpacity`
     flex-direction: column;
-    background-color: #FFF;
+    background-color: #FAFAFA;
     border: 1px solid #C4C4C4;
     border-radius: 5px;
-    margin: 20px 0px;
+    margin: 10px 0px;
 
     shadow-color: red;
     shadow-offset: {width: 0, height: 0};
@@ -19,9 +19,11 @@ export const ContentView = styled.View`
 `;
 
 export const ProfileImage = styled.Image`
-    height: 32px;
-    width: 32px;
+    height: 35px;
+    width: 35px;
     border-radius: 120px;
+    margin: 3px 2px;
+    border: 1px solid #CDBFBF; 
 `;
     
 export const GroupImage = styled.Image`
@@ -50,8 +52,9 @@ export const Description = styled.Text`
     
 export const ProfilesContainer = styled.View`
     flex-direction: row;
-    max-width: 60%;
-    justify-content: space-around;
+    max-width: 90%;
+    flex-wrap: wrap;
+    justify-content: flex-start;
     margin-vertical: 10px;
     
 `;

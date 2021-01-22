@@ -78,7 +78,9 @@ export default () => (
         headerTintColor: "black",
         headerTransparent: false,
         headerStyle: {
-          backgroundColor: "#fff",
+          backgroundColor: "#fafafa",
+          elevation: 0.4,
+          borderBottomColor: "#CCC",
         },
         headerTitle: "Explorar",
       }}
@@ -95,7 +97,7 @@ export default () => (
         headerStyle: {
           backgroundColor: "transparent",
         },
-        headerTitle: "Meu Grupo Especifico",
+        headerTitle: "",
       }}
     />
   </Stack.Navigator>
