@@ -7,7 +7,12 @@ export const Container = styled.SafeAreaView`
     flex: 1;
     position: relative;
     justify-content: flex-start;
-    align-items: flex-end
+    align-items: flex-end;
+`;
+
+export const Scroller = styled.ScrollView`
+    margin-bottom: 20px;
+    width: 100%;
 `;
 
 
@@ -19,16 +24,16 @@ export const styles = StyleSheet.create({
         alignItems: 'center',
         alignSelf: 'center',
         justifyContent: 'space-around',
-        marginLeft: 50,
-        marginRight: 50,
         position: 'absolute',
-        width: '90%',
+        width: '100%',
         height: '100%',
-        flex: 1
+        flex: 1,
+
     },
     font:{
         fontSize: 34,
-        fontFamily: "Inter_600SemiBold"
+        fontFamily: "Inter_600SemiBold",
+        marginTop: 60
     },
     subText: {
         fontSize: 18,
@@ -39,7 +44,7 @@ export const styles = StyleSheet.create({
     viewInferior:{
         justifyContent: "center",
         alignItems: "center",
-        marginTop: -30        
+        marginTop: 30,        
     },
     text:{
         fontFamily: "Inter_600SemiBold",

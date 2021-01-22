@@ -11,12 +11,14 @@ export default ({ textLabel, ...rest }) => {
       <LabelDefault style={[isFocused && { color: "#6B00B0" }]}>
         {textLabel}
       </LabelDefault>
+      
       <InputDefault
         style={[isFocused && { borderColor: "#6B00B0", color: "#6B00B0" }]}
         defaultValue={valueInput}
         onBlur={() => setIsFocused(false)}
         onFocus={() => setIsFocused(true)}
         onChangeText={valueInput => setValueInput(valueInput)}
+        returnKeyType="next"
       />
     </View>
   );

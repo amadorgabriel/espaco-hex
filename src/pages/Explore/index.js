@@ -12,7 +12,6 @@ import GroupImage3 from "../../assets/images/group3.jpg";
 export default () => {
   return (
     <Container>
-      <BackgroundSVG width="70%" style={styles.background} />
 
       <ScrollView style={styles.content}>
         <CardItemComponent
@@ -27,7 +26,6 @@ export default () => {
           groupName="Coders"
           textContent="Desenvolvemos diversas plataformas relacionadas a gestão de tarefas, confira alguns de nossos trabalhos."
         />
-
         <CardItemComponent
           srcGroupImageBg={GroupImage3}
           groupName="Roterizando"
@@ -36,22 +34,12 @@ export default () => {
 
         <CardItemComponent
           srcGroupImageBg={GroupImage1}
-          groupName="Espaçonautas"
+          groupName="Ps: (Nós codamos)"
           textContent="Idealizadores da plataforma HEX, um espaço de criação para os alunos
           do SENAI informática."
         />
 
-        <CardItemComponent
-          srcGroupImageBg={GroupImage2}
-          groupName="Coders"
-          textContent="Desenvolvemos diversas plataformas relacionadas a gestão de tarefas, confira alguns de nossos trabalhos."
-        />
-
-        <CardItemComponent
-          srcGroupImageBg={GroupImage3}
-          groupName="Roterizando"
-          textContent="Nós somos apaixonados por criar e contar novas histórias, desenvolvemos roteiros até publicarmos nossas próprias obras."
-        />
+     
       </ScrollView>
 
       <StatusBar style="dark" />

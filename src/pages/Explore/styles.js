@@ -4,7 +4,7 @@ import { StyleSheet } from 'react-native';
 
 
 export const Container = styled.SafeAreaView`
-    background-color: #F9F9F9;
+    background-color: #F2F3F5;
     flex: 1;
     position: relative;
     justify-content: flex-start;

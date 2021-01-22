@@ -5,6 +5,7 @@
     "name": "espaco-hex-app",
     "slug": "espaco-hex-app",
     "version": "1.0.0",
+    "orientation": "portrait",
     "assetBundlePatterns": [
       "**/*"
     ]

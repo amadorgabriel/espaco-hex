@@ -35,14 +35,7 @@ export default () => (
       name="Login"
       component={LoginScreen}
       options={{
-        headerTitleStyle: {
-          fontFamily: "Inter_600SemiBold",
-        },
-        headerTintColor: "transparent",
-        headerTransparent: true,
-        headerStyle: {
-          backgroundColor: "transparent",
-        },
+        headerShown: false,
       }}
     />
     <Stack.Screen
@@ -102,7 +95,7 @@ export default () => (
         headerStyle: {
           backgroundColor: "transparent",
         },
-        headerTitle: "POHAs",
+        headerTitle: "Meu Grupo Especifico",
       }}
     />
   </Stack.Navigator>
