@@ -61,13 +61,6 @@ export default ({ srcGroupImageBg, groupName, textContent, ...rest }) => {
         </View>
 
         <ProfilesContainer>
-          {/* <ProfileImage source={ProfileImg1} />
-          <ProfileImage source={ProfileImg2} />
-          <ProfileImage source={ProfileImg3} />
-          <ProfileImage source={ProfileImg4} />
-          <ProfileImage source={ProfileImg5} />
-          <ProfileImage source={ProfileImg6} />
-          <ProfileImage source={ProfileImg7} /> */}
           {rows}
         </ProfilesContainer>
       </ContentView>
