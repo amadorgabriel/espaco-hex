@@ -34,7 +34,7 @@ export const GroupImage = styled.Image`
 export const ProgressBar = styled.Image`
     width: 240px;
     height: 20px;
-    margin: 20px 0px 20px 7px;
+    margin: 20px 0px 20px 0px;
 `;
 
 export const Title = styled.Text`
@@ -55,7 +55,7 @@ export const ProfilesContainer = styled.View`
     max-width: 90%;
     flex-wrap: wrap;
     justify-content: flex-start;
-    margin-vertical: 10px;
+    margin-left: 7px;
     
 `;
 

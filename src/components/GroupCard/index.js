@@ -14,7 +14,6 @@ import {
 
 import { Text, View } from "react-native";
 import ImagemProgressBar from "../../assets/images/progress-bar.png";
-import ProfileImg from "../../assets/images/profile.png";
 
 import ProfileImg1 from "../../assets/images/team1.jpg";
 import ProfileImg2 from "../../assets/images/team2.jpg";
@@ -28,13 +27,25 @@ export default ({ srcGroupImageBg, groupName, textContent, ...rest }) => {
   const navigation = useNavigation();
 
   var picQuantity = [1, 2, 3, 4, 5, 6, 7];
-  var sortPicQuantity = picQuantity[Math.floor(Math.random() * picQuantity.length)];
-  var imgComponents = [ProfileImg1, ProfileImg2, ProfileImg3, ProfileImg4, ProfileImg5, ProfileImg6, ProfileImg7]
+  var sortPicQuantity =
+    picQuantity[Math.floor(Math.random() * picQuantity.length)];
+  var imgComponents = [
+    ProfileImg1,
+    ProfileImg2,
+    ProfileImg3,
+    ProfileImg4,
+    ProfileImg5,
+    ProfileImg6,
+    ProfileImg7,
+  ];
 
-  
   let rows = [];
   for (let i = 1; i < sortPicQuantity; i++) {
-    rows.push(<ProfileImage source={imgComponents[Math.floor(Math.random() * imgComponents.length)]}></ProfileImage>);
+    rows.push(
+      <ProfileImage
+        source={imgComponents[Math.floor(Math.random() * imgComponents.length)]}
+      ></ProfileImage>
+    );
   }
 
   return (
@@ -52,17 +63,27 @@ export default ({ srcGroupImageBg, groupName, textContent, ...rest }) => {
             justifyContent: "space-between",
           }}
         >
-          <ProgressBar source={ImagemProgressBar} />
-          <Text
-            style={{ fontWeight: "bold", marginRight: 20, color: "#464646" }}
-          >
-            35%
-          </Text>
+          <View style={{ flexDirection: "column", marginTop: 25, justifyContent:"space-between", alignItems: "flex-start", marginLeft: 7  }}>
+            <Text> Progresso do grupo </Text>
+
+            <View style={{ flexDirection: "row", alignItems: "center", justifyContent:"space-between", width: '85%',marginLeft: 7   }}>
+
+              <ProgressBar source={ImagemProgressBar} />
+
+              <Text
+                style={{
+                  fontWeight: "bold",
+                  marginLeft: 25,
+                  color: "#464646",
+                }}
+              >
+                 35%
+              </Text>
+            </View>
+          </View>
         </View>
 
-        <ProfilesContainer>
-          {rows}
-        </ProfilesContainer>
+        <ProfilesContainer>{rows}</ProfilesContainer>
       </ContentView>
     </CardItem>
   );

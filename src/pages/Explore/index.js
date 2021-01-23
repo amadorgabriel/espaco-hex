@@ -4,9 +4,11 @@ import { ScrollView, RefreshControl } from "react-native";
 import { StatusBar } from "expo-status-bar";
 
 import CardItemComponent from "../../components/GroupCard/index";
-import GroupImage1 from "../../assets/images/group1.jpg";
+import GroupImageApollo from "../../assets/images/apollo.jpg";
 import GroupImage2 from "../../assets/images/group2.jpg";
-import GroupImage3 from "../../assets/images/group3.jpg";
+import GroupCoding from "../../assets/images/coding.jpg";
+import Group12 from "../../assets/images/group1-2.png";
+
 
 const wait = (timeout) => {
   return new Promise(resolve => {
@@ -33,10 +35,10 @@ export default () => {
         }
       >
         <CardItemComponent
-          srcGroupImageBg={GroupImage1}
+          srcGroupImageBg={GroupImageApollo}
           groupName="Espaçonautas"
           textContent="Idealizadores da plataforma HEX, um espaço de criação para os alunos
-          do SENAI informática."
+          do SENAI informática. Feito para icentivar o pensamento foda da caixa"
         />
 
         <CardItemComponent
@@ -45,16 +47,15 @@ export default () => {
           textContent="Desenvolvemos diversas plataformas relacionadas a gestão de tarefas, confira alguns de nossos trabalhos."
         />
         <CardItemComponent
-          srcGroupImageBg={GroupImage3}
+          srcGroupImageBg={Group12}
           groupName="Roterizando"
           textContent="Nós somos apaixonados por criar e contar novas histórias, desenvolvemos roteiros até publicarmos nossas próprias obras."
         />
 
         <CardItemComponent
-          srcGroupImageBg={GroupImage1}
-          groupName="Ps: (Nós codamos)"
-          textContent="Idealizadores da plataforma HEX, um espaço de criação para os alunos
-          do SENAI informática."
+          srcGroupImageBg={GroupCoding}
+          groupName="Ps:(Home Coders)"
+          textContent="Aqui você pode ganhar aquela grana extra, nos ajudando a codar paginas web e app para diversificadas áreas do mundo da programação "
         />
       </ScrollView>
 

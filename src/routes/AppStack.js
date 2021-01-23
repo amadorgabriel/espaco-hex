@@ -46,9 +46,10 @@ export default () => (
           fontFamily: "Inter_600SemiBold",
         },
         headerTintColor: "black",
-        headerTransparent: true,
+        headerTransparent: false,
         headerStyle: {
-          backgroundColor: "transparent",
+          backgroundColor: "#fafafa",
+          elevation: 0
         },
         headerTitle: "",
       }}
@@ -92,7 +93,7 @@ export default () => (
         headerTitleStyle: {
           fontFamily: "Inter_600SemiBold",
         },
-        headerTintColor: "black",
+        headerTintColor: "#000",
         headerTransparent: true,
         headerStyle: {
           backgroundColor: "transparent",

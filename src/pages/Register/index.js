@@ -1,16 +1,13 @@
-import React, {useState} from "react";
+import React from "react";
 import { Container, Scroller, styles } from "./styles";
 import { Text, View } from "react-native";
 import { StatusBar } from "expo-status-bar";
 
-import { useNavigation } from "@react-navigation/native";
 import ButtonComponent from "../../components/Button/index";
 import InputComponent from "../../components/Input/index";
 import BackgroundSVG from "../../assets/images/bg-default.svg";
 
 export default () => {
-  const [selectedValue, setSelectedValue] = useState("java");
-
 
   return (
     <Container>
