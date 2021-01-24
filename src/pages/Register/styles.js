@@ -32,7 +32,7 @@ export const styles = StyleSheet.create({
     font:{
         fontSize: 34,
         fontFamily: "Inter_600SemiBold",
-        marginTop: 60
+        marginTop: 10
     },
     subText: {
         fontSize: 18,

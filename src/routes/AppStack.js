@@ -14,7 +14,7 @@ const Stack = createStackNavigator();
 
 export default () => (
   <Stack.Navigator
-    initialRouteName="Login"
+    initialRouteName="Splash"
     screenOptions={{ headerShown: true, headerTitleAlign: "right" }}
   >
     <Stack.Screen

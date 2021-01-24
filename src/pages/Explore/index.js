@@ -38,7 +38,7 @@ export default () => {
           srcGroupImageBg={GroupImageApollo}
           groupName="Espaçonautas"
           textContent="Idealizadores da plataforma HEX, um espaço de criação para os alunos
-          do SENAI informática. Feito para icentivar o pensamento foda da caixa"
+          do SENAI informática. Feito para incentivar o pensamento fora da caixa"
         />
 
         <CardItemComponent
@@ -55,7 +55,7 @@ export default () => {
         <CardItemComponent
           srcGroupImageBg={GroupCoding}
           groupName="Ps:(Home Coders)"
-          textContent="Aqui você pode ganhar aquela grana extra, nos ajudando a codar paginas web e app para diversificadas áreas do mundo da programação "
+          textContent="Aqui você pode ganhar aquela grana extra, nos ajudando a codar paginas web e aplicativos para diversificadas áreas do mundo da programação "
         />
       </ScrollView>
 

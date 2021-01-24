@@ -1,16 +1,31 @@
-import React, { useState, useCallback }from "react";
-import { Container, Scroller, styles } from "./styles";
-import { Text, View, Image, StatusBar } from "react-native";
-import Swiper from 'react-native-swiper'
-import { Model } from 'react-model'
+import React, { useState, useCallback, useRef } from "react";
+import {
+  Container,
+  Scroller,
+  MainContent,
+  ButtonDefault,
+  InputDefault,
+  styles,
+} from "./styles";
+import { Model } from "react-model";
+import { useNavigation } from "@react-navigation/native";
+import { Modalize } from "react-native-modalize";
+import AwesomeAlert from "react-native-awesome-alerts";
+
+import {
+  Text,
+  View,
+  Image,
+  StatusBar,
+  TouchableOpacity,
+  ScrollView,
+} from "react-native";
+import Swiper from "react-native-swiper";
 
 import GroupProfile from "../../assets/images/group-profile.png";
-import MatchButtonImg from "../../assets/icons/heart-icon.svg";
-import GroupImage1 from "../../assets/images/bg-group.png";
-
-import ButtonComponent from "../../components/Button/index";
+import MatchButtonImg from "../../assets/icons/heart-1.svg";
 import TagComponent from "../../components/Tag/index";
-
+import ButtonComponent from "../../components/Button/index";
 
 const SlideSchema = {
   state: {
@@ -41,17 +56,39 @@ const Slide = (props) => {
         style={styles.image}
         source={{ uri: props.uri }}
       />
-      
     </View>
   );
 };
 
 export default () => {
+  //Slider
   const [{ useStore }] = useState(() => Model(SlideSchema));
   const [state, actions] = useStore();
   const loadHandle = useCallback((i) => {
     actions.loaded(i);
   }, []);
+
+  //Alert
+  const [showAlert, setShowAlert] = useState(false);
+  const [titleAlert, setTitleAlert] = useState("");
+  const [messageAlert, setMessageAlert] = useState("");
+
+  hideAlert = () => {
+    setShowAlert(false);
+  };
+
+  //Modal
+  const modalizeRef = useRef(null);
+  const onOpen = () => {
+    modalizeRef.current?.open();
+  };
+
+  //Input
+  const [isFocused, setIsFocused] = useState(false);
+  const [valueInput, setValueInput] = useState("");
+
+  //Navigation
+  const navigation = useNavigation();
 
   return (
     <Container>
@@ -75,46 +112,129 @@ export default () => {
             ))}
           </Swiper>
 
-          <View style={{marginTop: -40}}>
-            <View>
-              <Image source={GroupProfile} />
+          <MainContent>
+            <View style={styles.topView}>
+              <Image source={GroupProfile} style={styles.groupProfile} />
 
-              <Image source={MatchButtonImg} />
+              <TouchableOpacity
+                style={styles.matchBtn}
+                onPress={() => {
+                  setTitleAlert("Você realizou um Match!");
+                  setMessageAlert(
+                    "Grupo adicionado aos seus favoritos! (alerta provisório)"
+                  );
+                  setShowAlert(true);
+                }}
+              >
+                <MatchButtonImg width="40" />
+              </TouchableOpacity>
             </View>
 
-            <View style={styles.conteudo}>
-              <Text>Grupo Espaço HEX</Text>
-              <Text>
+            <View style={styles.mainText}>
+              <Text style={styles.title}>Espaço HEX</Text>
+              <Text style={styles.description}>
                 Somos os idealizadores da plataforma HEX, damos um espaço de
                 criação para os alunos do SENAI informática que desejam criar.{" "}
               </Text>
             </View>
 
-            <View style={styles.interesses}>
-              <Text>Interesses</Text>
-              <View>
+            <View style={styles.scrollView}>
+              <Text style={styles.subTitle}>Interesses</Text>
+              <ScrollView
+                horizontal={true}
+                showsHorizontalScrollIndicator={false}
+              >
                 <TagComponent textTag="Escrita Criativa" />
                 <TagComponent textTag="Fotografia" />
-              </View>
+                <TagComponent textTag="Roteiro" />
+                <TagComponent textTag="Cenografia" />
+                <TagComponent textTag="Edição" />
+              </ScrollView>
             </View>
 
-            <View style={styles.vagas}>
-              <Text>Vagas</Text>
-              <View style={styles.botao}>
-                <ButtonComponent
-                  textButton="FOTÓGRAFIA"
-                  redirectRouteName="Interests"
-                />
-                <ButtonComponent
-                  textButton="REDATOR"
-                  redirectRouteName="Interests"
-                />
-              </View>
+            <View style={styles.scrollView}>
+              <Text style={styles.subTitle}>Vagas</Text>
+
+              <ScrollView
+                horizontal={true}
+                showsHorizontalScrollIndicator={false}
+              >
+                <ButtonDefault onPress={onOpen}>
+                  <Text style={{ color: "#FFF", fontSize: 15 }}>
+                    Fotográfo(a)
+                  </Text>
+                </ButtonDefault>
+
+                <ButtonDefault onPress={onOpen}>
+                  <Text style={{ color: "#FFF", fontSize: 15 }}>
+                    Redator(a)
+                  </Text>
+                </ButtonDefault>
+              </ScrollView>
             </View>
-          </View>
+          </MainContent>
         </Scroller>
       </View>
 
+      <Modalize ref={modalizeRef}>
+        <View style={{ padding: 20 }}>
+          <View style={styles.mainText}>
+            <Text style={styles.title}>Formulário</Text>
+            <Text style={styles.description}>
+              Mostre que você está interessado no cargo agora mesmo!
+            </Text>
+          </View>
+
+          <InputDefault
+            style={[isFocused && { borderColor: "#FFC5C5" }]}
+            defaultValue={valueInput}
+            onBlur={() => setIsFocused(false)}
+            onFocus={() => setIsFocused(true)}
+            onChangeText={(valueInput) => setValueInput(valueInput)}
+            returnKeyType="done"
+            underlineColorAndroid="transparent"
+            placeholder="Como você pode contribuir?"
+            placeholderTextColor="grey"
+            numberOfLines={10}
+            multiline={true}
+            style={{ height: 300, textAlignVertical: "top" }}
+          />
+
+          <ButtonDefault
+            onPress={() => {
+              setTitleAlert("Você se Candidatou!");
+              setMessageAlert(
+                "Agora o time irá avaliar sua candidatura e entrar em contato com você, boa sorte!"
+              );
+              setShowAlert(true);
+            }}
+          >
+            <Text style={{ color: "#FFF", fontSize: 15, textAlign: "center" }}>ENVIAR</Text>
+          </ButtonDefault>
+
+        </View>
+      </Modalize>
+
+      <AwesomeAlert
+        show={showAlert}
+        showProgress={false}
+        title={titleAlert}
+        message={messageAlert}
+        closeOnTouchOutside={false}
+        closeOnHardwareBackPress={false}
+        showCancelButton={false}
+        showConfirmButton={true}
+        confirmText="Entendido!"
+        confirmButtonColor="#DD6B55"
+
+        onConfirmPressed={() => {
+          hideAlert();
+          
+          if (titleAlert == "Você se Candidatou!") {
+            navigation.navigate("Explore");
+          }
+        }}
+      />
       <StatusBar hidden={true} />
     </Container>
   );

@@ -3,6 +3,7 @@ import { Container, Scroller, styles } from "./styles";
 import { StatusBar } from "expo-status-bar";
 import { useNavigation } from "@react-navigation/native";
 import AwesomeAlert from "react-native-awesome-alerts";
+import { Text, View, TouchableOpacity} from "react-native";
 
 import ButtonComponent from "../../components/Button/index";
 import InputComponent from "../../components/Input/index";
@@ -11,7 +12,6 @@ import InputComponent from "../../components/Input/index";
 import BackgroundSVG from "../../assets/images/bg-default.svg";
 import GoogleBtnSVG from "../../assets/images/googleBtn.svg";
 
-import { Text, View, TouchableOpacity} from "react-native";
 
 export default () => {
   const [showAlert, setShowAlert] = useState(false);
