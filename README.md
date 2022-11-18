@@ -59,7 +59,7 @@ Antes de começar você vai precisar ter instalado na sua máquina a ferramenta 
 ## :octocat: Clone o Projeto
 ```git
   # Clonando
-  ❯ git clone https://github.com/amador2014/Espaco-Hex-App-Mobile.git
+  ❯ git clone https://github.com/amadorgabriel/espaco-hex.git
  ```
 
 <div id="run-mobile" />
